@@ -19,11 +19,26 @@ alias gp='git push'
 alias gl='git pull'
 alias gd='git diff'
 alias gb='git branch'
-alias stk='cd ~/Documents/etf_regression/'
-alias odt='cd ~/origin_git/origin-data-team/'
-
+alias odt='cd ~/origin_git/origin-data-team/ && conda activate odt'
+alias pg='cd ~/personal_git/ && conda activate personal'
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/Users/willbates/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/willbates/google-cloud-sdk/path.zsh.inc'; fi
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/willbates/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/willbates/google-cloud-sdk/completion.zsh.inc'; fi
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/Users/willbates/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/Users/willbates/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "/Users/willbates/miniconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/Users/willbates/miniconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
