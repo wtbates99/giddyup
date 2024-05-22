@@ -138,13 +138,17 @@ alias pg='cd ~/personal_git/ && conda activate personal'
 alias lg='lazygit'
 n() {
     filename="$(date +%Y-%m-%d).md"
-    echo "The file name will be: $filename"
-    echo -n "Do you want to continue? (y/n) "
-    read confirm
-    if [ "$confirm" = "y" ]; then
+    if [ -f "$filename" ]; then
         nvim "$filename"
     else
-        echo "Operation cancelled."
+        echo "The file name will be: $filename"
+        echo -n "Do you want to continue? (y/n) "
+        read confirm
+        if [ "$confirm" = "y" ]; then
+            nvim "$filename"
+        else
+            echo "Operation cancelled."
+        fi
     fi
 }
 # The next line updates PATH for the Google Cloud SDK.
