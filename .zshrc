@@ -136,6 +136,17 @@ alias gb='git branch'
 alias odt='cd ~/origin_git/origin-data-team/ && conda activate odt'
 alias pg='cd ~/personal_git/ && conda activate personal'
 alias lg='lazygit'
+n() {
+    filename="$(date +%Y-%m-%d).md"
+    echo "The file name will be: $filename"
+    echo -n "Do you want to continue? (y/n) "
+    read confirm
+    if [ "$confirm" = "y" ]; then
+        nvim "$filename"
+    else
+        echo "Operation cancelled."
+    fi
+}
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/Users/willbates/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/willbates/google-cloud-sdk/path.zsh.inc'; fi
 
